@@ -7,35 +7,31 @@ function cardButton(element){
 
     cardArray.push(cardTitle);
 
-    const secectedCard = document.getElementById('addToSelectedCard');
-    secectedCard.innerHTML = '';
+    const secectToAddCards = document.getElementById('add-table-row');
+    secectToAddCards.innerHTML = '';
     
     for(let i = 0 ; i < cardArray.length; i++){
         const index = cardArray[i];
 
-        const tableCreate = document.createElement('table')
-        tableCreate.innerHTML = `
-            <tbody>
-                <tr>
-                    <th id ="thNumber">${i+1}.</th>
-                    <td>${index}</td>
-                </tr>
-            </tbody>
+        const tableRawCreate = document.createElement('tr')
+        tableRawCreate.innerHTML = `
+            <th id ="table-number">${i+1}.</th>
+            <td>${index}</td>
         `; 
-        secectedCard.appendChild(tableCreate);  
+        secectToAddCards.appendChild(tableRawCreate);  
     } 
-    numberCalculate()
+    tableNumberCalculate()
 }
 
 
 let number = [];
-function numberCalculate(){
-    const numberTotal = document.getElementById('thNumber')
+function tableNumberCalculate(){
+    const numberTotal = document.getElementById('table-number')
     number.push(numberTotal);
-    const secectedCard = document.getElementById('addToSelectedCard');
+    const secectToAddCards = document.getElementById('add-table-row');
     if(number.length > 5){
         alert('card is full');
-        secectedCard.innerHTML = '';
+        secectToAddCards.innerHTML = '';
     }
     
 }
@@ -57,3 +53,5 @@ document.getElementById('calculate-total-button').addEventListener('click', func
     const playerTotalAmount = setAmount('player-total-amount',totalPlayerAmount );
 
 })
+
+

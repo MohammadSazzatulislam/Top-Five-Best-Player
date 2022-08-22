@@ -14,27 +14,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title> Top Five Best Players </title>
 </head>
-<body class="bg-gray-900">
+<body>
 
     <!--------------
      header section
     ------------- -->
-    <header>
-
-        <div class="grid grid-cols-4 content-end header-section ">
+    <header class="header-container ">
             <div>
-                <img class="w-full" src="images/header.png" alt="">
+                                
+                <div class=" header-section flex flex-col items-center justify-center text-center mx-auto text-white w-6/12 py-24">
+                    <h1 class="header-title font-bold mb-8 "> Top Five <span class="text-orange-400">Best Players</span> </h1>
+                    <h3 class="text-xl">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam onsequat sunt nostrud amet.</h3>     
+                </div>
+                
             </div>
-            <div class="col-span-2 text-white p-5 text-center">
-                <h1 class="header-title font-bold mb-8 "> Top Five <span class="text-orange-400">Best Players</span> </h1>
-                <h3 class="text-xl">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam onsequat sunt nostrud amet.</h3>
-            </div>
-            <div class="flex flex-col">
-                <img class="w-7/12 pl-20"  src="images/logo-1.png" alt="">
-                <img class=" w-7/12 self-end pt-5" src="images/logo-2.png" alt="">
-            </div>
-        </div>
-
     </header>
 
     <!------------
@@ -109,15 +102,20 @@
 
             <div class="flex flex-col gap-y-5">
                  <!-- card 1 -->
-                 <div class="w-64 mx-h-80 rounded-none text-white p-5 bg-black bg-opacity-75 border border-sky-800  ">
+                 <div class="w-80 mx-h-80 rounded-none text-white p-5 bg-black bg-opacity-75 border border-sky-800  ">
                     <h1 class="text-center font-semibold text-2xl mt-2 border-b border-gray-500 pb-4"> Selected - V</h1>
-                    <div id="addToSelectedCard" class="overflow-x-auto mt-8">
-                        <!-- dynamic table add -->
+                    <div class="overflow-x-auto mt-8">
+                        <!--  table add -->
+                        <table class="table-auto text-white text-md font-semibold">
+                            <tbody id="add-table-row">
+                              
+                            </tbody>
+                          </table>
                     </div>
                 </div>
                 <!-- card end --> 
                 <!-- card 2 -->
-                <div class="w-64 mx-h-80  rounded-none border border-sky-800 text-white p-5 bg-black bg-opacity-75 ">
+                <div class="w-80 mx-h-80  rounded-none border border-sky-800 text-white p-5 bg-black bg-opacity-75 ">
                         <h1 class="text-center font-semibold text-2xl mt-2 border-b border-gray-500 pb-4"> Budget </h1>
                     <div class="mt-5">
                         <p class="flex justify-between items-center"> Per Player <input id="per-Player-field"  class="w-24 py-2 border-2 bg-black bg-opacity-75 text-white px-1 " type="text"></p>
@@ -132,7 +130,7 @@
                         <div class="flex justify-center my-5">
                             <button id="calculate-total-button" class="bg-blue-800 px-12 text-md font-semibold py-2 " >Calculate Total</button> 
                         </div>
-                        <p class="flex justify-between items-center"> Player Total <span>$<span id="player-total-amount"></span></span></p>
+                        <p class="flex justify-between items-center"> Player Total <span class="text-orange-400">$<span id="player-total-amount"></span></span></p>
                     </div>   
                 </div>
                 <!-- card end -->  
