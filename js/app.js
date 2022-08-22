@@ -32,7 +32,7 @@ function tableNumberCalculate(){
     const tableBody = document.querySelector('.add-table');
     const listNumber = document.getElementById('list-number');
     if(number.length > 5){
-        alert('card is full');
+        alert('card is full try again');
         tableBody.innerHTML = '';
         listNumber.innerText = 0;
     }
@@ -40,7 +40,7 @@ function tableNumberCalculate(){
 }
 
 document.getElementById('calculate-button').addEventListener('click', function(){
-
+    errorHandle()
     const perPlayerAmount = similar('per-Player-field');
     const totalAmount = perPlayerAmount * parseFloat(number.length);
     const playerExpenses = setAmount('total-player-cost', totalAmount);
@@ -48,7 +48,7 @@ document.getElementById('calculate-button').addEventListener('click', function()
 })
 
 document.getElementById('calculate-total-button').addEventListener('click', function(){
-
+    errorHandle()
     const playerExpenses = anotherSimilar('total-player-cost');
     const managerAmount = similar('manager-amount');
     const coachAmount = similar('coach-amount');
@@ -57,7 +57,31 @@ document.getElementById('calculate-total-button').addEventListener('click', func
 
 })
 
+
 function errorHandle(){
+    const perPlayerAmount = document.getElementById('per-Player-field');
+    const playerAmount = parseFloat(perPlayerAmount.value);
+    const managerTotalAmount = document.getElementById('manager-amount');
+    const managerAmount = parseFloat(managerTotalAmount.value);
+    const coachTotalAmount = document.getElementById('coach-amount');
+    const coachAmount = parseFloat(coachTotalAmount.value);
+    const totalPlayerCost = document.getElementById('total-player-cost');
+    const playerCost = parseFloat(totalPlayerCost.innerText)
+    const totalPlayerAmount = document.getElementById('player-total-amount');
+    const amount = parseFloat(totalPlayerAmount.innerText)
+
+    if(isNaN(perPlayerAmount.value) || perPlayerAmount.value === '' || playerAmount < 0){
+        if(isNaN(managerTotalAmount.value) || managerTotalAmount.value === '' || managerAmount < 0){
+            if(isNaN(coachTotalAmount.value) || coachTotalAmount.value === '' || coachAmount < 0){
+                alert('Wrong input please enter a valid number');
+                perPlayerAmount.value = '';
+                managerTotalAmount.value = '';
+                coachTotalAmount.value = '';
+                totalPlayerCost.innerText = 00; 
+                totalPlayerAmount.innerText = 00;
+            }
+        }
+    }
     
 }
 
