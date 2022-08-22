@@ -2,24 +2,25 @@
 let cardArray = [];
 
 function cardButton(element){
-    
     const cardTitle = element.parentNode.children[0].innerText;
-
     cardArray.push(cardTitle);
 
-    const secectToAddCards = document.getElementById('add-table-row');
-    secectToAddCards.innerHTML = '';
-    
-    for(let i = 0 ; i < cardArray.length; i++){
-        const index = cardArray[i];
+    document.getElementById('list-number').innerText = cardArray.length;
 
-        const tableRawCreate = document.createElement('tr')
-        tableRawCreate.innerHTML = `
-            <th id ="table-number">${i+1}.</th>
-            <td>${index}</td>
-        `; 
-        secectToAddCards.appendChild(tableRawCreate);  
-    } 
+    const tableBody = document.querySelector('.add-table');
+    tableBody.innerHTML = '';
+    
+    for(let i = 0; i < cardArray.length; i++){
+        const element = cardArray[i];
+        
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <th id="table-number">${i+1}.</th>
+            <td>${element}</td>
+        `;
+
+        tableBody.appendChild(tr);
+}
     tableNumberCalculate()
 }
 
@@ -28,10 +29,12 @@ let number = [];
 function tableNumberCalculate(){
     const numberTotal = document.getElementById('table-number')
     number.push(numberTotal);
-    const secectToAddCards = document.getElementById('add-table-row');
+    const tableBody = document.querySelector('.add-table');
+    const listNumber = document.getElementById('list-number');
     if(number.length > 5){
         alert('card is full');
-        secectToAddCards.innerHTML = '';
+        tableBody.innerHTML = '';
+        listNumber.innerText = 0;
     }
     
 }
@@ -53,5 +56,9 @@ document.getElementById('calculate-total-button').addEventListener('click', func
     const playerTotalAmount = setAmount('player-total-amount',totalPlayerAmount );
 
 })
+
+function errorHandle(){
+    
+}
 
 

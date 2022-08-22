@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- tailewind css cdn link -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- dasyui css cdn link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title> Top Five Best Players </title>
 </head>
 <body>
@@ -33,8 +36,8 @@
     <!------------
      main section
     ------------>
-    <main>
-        <section class="my-10 py-10 flex mx-auto w-10/12 gap-y-5 gap-x-5 ">
+    <main class="main-container">
+        <section class=" py-20 flex mx-auto w-10/12 gap-y-5 gap-x-5 ">
             <div>
                 <div class="grid grid-cols-3 gap-y-5 gap-x-5 ">
                         <!-- card 1 -->
@@ -49,7 +52,7 @@
                     <!-- card end -->       
                     <!-- card 2 -->
                     <div class="w-64 mx-h-80 rounded-none border-y border-sky-800">
-                        <img class="w-full border-x border-amber-800 " src="images/Card-Player/card-7.png">
+                        <img class="w-full border-x border-amber-800 " src="images/Card-Player/card-2.png">
                         <div class=" text-center text-white border-x border-lime-800 bg-black bg-opacity-75 ">
                             <h2 class="text-4xl  font-semibold py-3 ">Life hack</h2>
                             <p class="opacity-75" > 36 Goals - 120 Assist</p>
@@ -103,14 +106,14 @@
             <div class="flex flex-col gap-y-5">
                  <!-- card 1 -->
                  <div class="w-80 mx-h-80 rounded-none text-white p-5 bg-black bg-opacity-75 border border-sky-800  ">
-                    <h1 class="text-center font-semibold text-2xl mt-2 border-b border-gray-500 pb-4"> Selected - V</h1>
-                    <div class="overflow-x-auto mt-8">
+                    <h1 class="text-center font-semibold text-2xl mt-2 border-b border-gray-500 pb-4"> Selected <span id="list-number">0</span></h1>
                         <!--  table add -->
-                        <table class="table-auto text-white text-md font-semibold">
-                            <tbody id="add-table-row">
-                              
+                    <div class="overflow-x-auto mt-5">
+                        <table class="table w-60 mx-auto text-black">
+                            <tbody class="add-table">
+                                
                             </tbody>
-                          </table>
+                        </table>
                     </div>
                 </div>
                 <!-- card end --> 
@@ -141,7 +144,7 @@
     <!------------
     footer section
     -------------->
-    <footer class="text-center text-white text-xl my-10 py-10 border-t border-gray-600 ">
+    <footer class="text-center text-white text-xl py-10 border-t border-gray-400 footer-container ">
         Copyright @ 2022 All Rights Reserved.
     </footer>
 
