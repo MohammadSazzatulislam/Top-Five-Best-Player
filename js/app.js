@@ -4,8 +4,6 @@ let cardArray = [];
 function cardButton(element){
     
     const cardTitle = element.parentNode.children[0].innerText;
-    const cardTitles = element.parentNode.children[2];
-    cardTitles.style.visibility = 'hidden';
 
     cardArray.push(cardTitle);
 
@@ -41,3 +39,21 @@ function numberCalculate(){
     }
     
 }
+
+document.getElementById('calculate-button').addEventListener('click', function(){
+
+    const perPlayerAmount = similar('per-Player-field');
+    const totalAmount = perPlayerAmount * parseFloat(number.length);
+    const playerExpenses = setAmount('total-player-cost', totalAmount);
+
+})
+
+document.getElementById('calculate-total-button').addEventListener('click', function(){
+
+    const playerExpenses = anotherSimilar('total-player-cost');
+    const managerAmount = similar('manager-amount');
+    const coachAmount = similar('coach-amount');
+    const totalPlayerAmount = playerExpenses + managerAmount + coachAmount;
+    const playerTotalAmount = setAmount('player-total-amount',totalPlayerAmount );
+
+})
