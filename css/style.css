@@ -14,3 +14,11 @@
     background-color: rgba(0, 0, 0, 0.94);
 }
 
+.button-clicked-color{
+    background-color: rgba(32, 45, 188, 0.906);
+}
+
+.button-color{
+    background-color: rgba(236, 236, 236, 0.906);
+    color: black;
+}

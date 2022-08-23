@@ -4,6 +4,7 @@ let cardArray = [];
 function cardButton(element){
     const cardTitle = element.parentNode.children[0].innerText;
     cardArray.push(cardTitle);
+    buttonDisabled(element)
 
     document.getElementById('list-number').innerText = cardArray.length;
 
@@ -22,6 +23,15 @@ function cardButton(element){
         tableBody.appendChild(tr);
 }
     tableNumberCalculate()
+}
+
+
+function buttonDisabled(element){
+    const button = element.disabled = true;
+    if(button == true){
+        const buttonColor = element.classList;
+        buttonColor.add('button-color')
+    }
 }
 
 
