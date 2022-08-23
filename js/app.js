@@ -78,7 +78,7 @@ function errorHandle(){
     const totalPlayerCost = document.getElementById('total-player-cost');
     const playerCost = parseFloat(totalPlayerCost.innerText)
     const totalPlayerAmount = document.getElementById('player-total-amount');
-    const amount = parseFloat(totalPlayerAmount.innerText)
+    const totalAmount = parseFloat(totalPlayerAmount.innerText)
 
     if(isNaN(perPlayerAmount.value) || perPlayerAmount.value === '' || playerAmount < 0){
         if(isNaN(managerTotalAmount.value) || managerTotalAmount.value === '' || managerAmount < 0){
